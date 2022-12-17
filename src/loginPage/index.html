@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+    
 </head>
 
 <body>
@@ -20,15 +20,15 @@
                 <h1>Login</h1>
                 <div class="containerInput">
                     <label>Email</label>
-                    <input placeholder="username@gmail.com" required>
+                    <input placeholder="username@gmail.com" required id="email">
                 </div>
                 <div class="containerInput">
                     <label>Password</label>
-                    <input placeholder="Password" required type="password"> 
+                    <input placeholder="Password" required type="password" id="password"> 
                 </div>
                 <div class="containerButton">
                     <label>Forgot Password?</label>
-                    <button>Sign In</button>
+                    <button id="signIn" type="button">Sign In</button>
                 </div>
                 <div class="methodsAutentication">
                     <label>Or continue with</label>
@@ -42,5 +42,5 @@
     
 </body>
 <script src="script.js" type="module"></script>
-    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>
