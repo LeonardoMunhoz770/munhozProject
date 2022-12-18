@@ -23,7 +23,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app)
 
-
 document.querySelector("#signIn").addEventListener("click", function(){
   let email = document.querySelector("#email").value;
   let password = document.querySelector("#password").value;
@@ -32,7 +31,7 @@ document.querySelector("#signIn").addEventListener("click", function(){
     // Signed in 
     const user = userCredential.user;
     // Redirect
-    window.location.href = '../homePage/index.html'
+    window.location.href = 'src/homePage/index.html'
   })
   .catch((error) => {
     const errorCode = error.code;
