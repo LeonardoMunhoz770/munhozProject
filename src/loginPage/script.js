@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-import { getAuth , signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js'
+import { getAuth , signInWithEmailAndPassword, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -31,10 +31,8 @@ document.querySelector("#signIn").addEventListener("click", function(){
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-
-    // ...
-    
-    console.log('user Logado')
+    // Redirect
+    window.location.href = '../homePage/index.html'
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -47,4 +45,47 @@ document.querySelector("#signIn").addEventListener("click", function(){
       timer: 2000
     })
   });
+})
+
+
+document.querySelector("#forgotPassword").addEventListener("click", async function(){
+  const { value: email } = await Swal.fire({
+    title: 'Input email address',
+    input: 'email',
+    inputLabel: 'Your email address',
+    inputPlaceholder: 'Enter your email address'
+  })  
+  if(email){
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    Toast.fire({
+      icon: 'success',
+      title: 'E-mail de redefinição enviado!'
+    })
+  })
+  .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Algo deu errado',
+        footer: `<label>Contate o administrador! ${errorMessage}</label>`
+      })
+    });
+  }
+  
+    
 })
