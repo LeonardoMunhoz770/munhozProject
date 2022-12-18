@@ -75,7 +75,7 @@ body{
 	justify-content: flex-start;
 	align-items: center;
 	display: flex;
-	background-image: url('/assets/imageBackground.png');
+	background-image: url('assets/imageBackground.png');
 	background-repeat: no-repeat;
 	background-size: 100% 700px
 
