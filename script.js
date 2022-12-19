@@ -49,10 +49,10 @@ document.querySelector("#signIn").addEventListener("click", function(){
 
 document.querySelector("#forgotPassword").addEventListener("click", async function(){
   const { value: email } = await Swal.fire({
-    title: 'Input email address',
+    title: 'Redefinição de Senha',
     input: 'email',
-    inputLabel: 'Your email address',
-    inputPlaceholder: 'Enter your email address'
+    inputLabel: 'Seu endreço de Email',
+    inputPlaceholder: 'username@gmail.com'
   })  
   if(email){
     sendPasswordResetEmail(auth, email)
@@ -119,4 +119,9 @@ document.querySelector("#autentication").addEventListener("click", function(){
     })
 
   });
+})
+
+document.querySelector("#register").addEventListener("click", async function(){
+  
+
 })

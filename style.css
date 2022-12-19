@@ -191,6 +191,10 @@ body{
 	cursor: pointer;
 }
 
+.messages{
+	display: flex;
+	justify-content: space-between;
+}
 
 
 /*
@@ -221,4 +225,25 @@ body{
 .containerLogo img{
 	width: 35px;
 	height: 35px;
+}
+
+/*
+	Modal de registro
+*/
+
+.containerRegister{
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.containerRegister input{
+	width: 80%;
+	height: 35px;
+	border: 1px solid black;
+	border-radius: 2px;
+	padding-left: 10px;
 }

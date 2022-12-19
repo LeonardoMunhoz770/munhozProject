@@ -16,24 +16,27 @@
     <main class="container">
         <div class="containerForm">
             <form>
-                <p>Boatxyz</p>
+                <p>MunhozCompany</p>
                 <h1>Login</h1>
                 <div class="containerInput">
                     <label>Email</label>
                     <input placeholder="username@gmail.com" required id="email">
                 </div>
                 <div class="containerInput">
-                    <label>Password</label>
-                    <input placeholder="Password" required type="password" id="password"> 
+                    <label>Senha</label>
+                    <input placeholder="Senha" required type="password" id="password"> 
                 </div>
                 <div class="containerButton">
-                    <label id="forgotPassword">Forgot Password?</label>
-                    <button id="signIn" type="button">Sign In</button>
+                    <section class="messages">
+                        <label id="forgotPassword">Esqueceu a senha?</label>
+                        <label id="register">É novo? Registre-se!</label>
+                    </section>
+                    <button id="signIn" type="button">Entrar</button>
                 </div>
                 <div class="methodsAutentication">
-                    <label>Or continue with</label>
+                    <label>Ou continue com</label>
                     <figure class="containerLogo" id="autentication">
-                        <img src="/assets/logo_google.png">
+                        <img src="./assets/logo_google.png">
                     </figure>
                 </div>
             </form>
