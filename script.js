@@ -122,6 +122,5 @@ document.querySelector("#autentication").addEventListener("click", function(){
 })
 
 document.querySelector("#register").addEventListener("click", async function(){
-  
-
+  window.location.href = './src/register/index.html'
 })
